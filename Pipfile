@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+sqlalchemy = "*"
+pymysql = "*"
+alembic = "*"
+passlib = {extras = ["bcrypt"], version = "*"}
+pygeohash = "*"
+python-jose = {extras = ["cryptography"], version = "*"}
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+migrate = "PIPENV_VERBOSITY=-1 alembic upgrade head"
+start = "python -m main.py"
